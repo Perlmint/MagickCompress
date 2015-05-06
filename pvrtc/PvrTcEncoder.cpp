@@ -95,7 +95,7 @@ void PvrTcEncoder::EncodeAlpha2Bpp(void* result, const RgbaBitmap& bitmap)
 			PvrTcPacket* packet = packets + GetMortonNumber(x, y);
 			packet->usePunchthroughAlpha = 0;
 			packet->colorAIsOpaque = 0;
-			packet->colorA = 0x7ff;		// White, with 0 alpha
+			packet->colorA = 0x0000;		// White, with 0 alpha
 			packet->colorBIsOpaque = 1;
 			packet->colorB = 0x7fff;	// White with full alpha
 
@@ -178,7 +178,7 @@ void PvrTcEncoder::EncodeAlpha4Bpp(void* result, const RgbaBitmap& bitmap)
 			PvrTcPacket* packet = packets + GetMortonNumber(x, y);
 			packet->usePunchthroughAlpha = 0;
 			packet->colorAIsOpaque = 0;
-			packet->colorA = 0x7ff;		// White, with 0 alpha
+			packet->colorA = 0x0000;		// White, with 0 alpha
 			packet->colorBIsOpaque = 1;
 			packet->colorB = 0x7fff;	// White with full alpha
 
