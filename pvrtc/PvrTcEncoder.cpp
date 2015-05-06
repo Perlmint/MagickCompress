@@ -99,7 +99,7 @@ void PvrTcEncoder::EncodeAlpha2Bpp(void* result, const RgbaBitmap& bitmap)
 			packet->colorBIsOpaque = 1;
 			packet->colorB = 0x7fff;	// White with full alpha
 
-			const unsigned char* blockBitmapData = &bitmapData[y * 4 * size + x * 8];
+			const unsigned char* blockBitmapData = &bitmapData[(y * 4 * size + x * 8) * 4];
 
 			uint32_t modulationData = 0;
 			for (int py = 0; py < 4; ++py)
@@ -182,7 +182,7 @@ void PvrTcEncoder::EncodeAlpha4Bpp(void* result, const RgbaBitmap& bitmap)
 			packet->colorBIsOpaque = 1;
 			packet->colorB = 0x7fff;	// White with full alpha
 
-			const unsigned char* blockBitmapData = &bitmapData[(y*size + x) * 4];
+			const unsigned char* blockBitmapData = &bitmapData[((y*size + x) * 4) * 4];
 
 			uint32_t modulationData = 0;
 			for (int py = 0; py < 4; ++py)
