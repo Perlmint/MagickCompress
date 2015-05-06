@@ -197,3 +197,8 @@ FakesAssemblies/
 *.d
 *.o
 ext/
+
+# glibtool output
+*.lo
+*.la
+.libs
