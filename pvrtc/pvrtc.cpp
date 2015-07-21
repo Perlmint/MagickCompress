@@ -394,7 +394,7 @@ WritePVRTCImage(const ImageInfo *image_info, Image *image)
 	else if (strcmp(image_info->magick, "PVRTC4BPPA") == 0)
 	{
 		header.pixelFormat = PvrHeader::PVRTC_4BPP_RGB;
-		dataSize = sizeof(unsigned char) * bitmap->GetArea() / 4;
+		dataSize = sizeof(unsigned char) * bitmap->GetArea() / 2;
 		dataPtr = (unsigned char *)malloc(dataSize);
 		memset(dataPtr, 0, dataSize);
 		Javelin::PvrTcEncoder::EncodeAlpha4Bpp(dataPtr, *bitmap);
